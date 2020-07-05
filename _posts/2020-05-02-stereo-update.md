@@ -1,5 +1,5 @@
 ---
-title: "Stereo Vision update"
+title: "Stereo Vision Update"
 author: "Andrew Huang"
 categories: perception
 tags: [progress update]
