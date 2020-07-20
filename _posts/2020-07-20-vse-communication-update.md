@@ -1,0 +1,28 @@
+---
+title: "The Communication Debate"
+author: "Michelle Keane"
+categories: localisation
+tags: [communication, vehicle state estimation, test bed]
+published: true
+mathjax: true
+---
+
+The Piksi Multi has the capabilities to transfer data through USB, controller area network (CAN) bus, or Ethernet connections. CAN bus is the standard communication for vehicles, and in order to interface with something like the MoTeC available on the 2020 Electric MUR car (as well as past iterations), it is essential. However as Autonomous 2020 is working on a separate test bed and interfacing with a Jetson Xavier, perhaps USB is the more preferable option. Ethernet connections is another format becoming more common in the automotive industry, and as some of our other devices are already using it and the MoTeC is compatible with this form of connection, could this also be a likely option?
+
+## What are the differences?
+Firstly, USB is a single master protocol, whereas CAN is a multi-master, and Ethernet is a point to point connection. This means that USB relies on having a “master” computer where all communications go through, such as connecting various devices to your laptop or desktop through USB. CAN on the other hand has no such need for a master computer and instead the different devices communicate directly with each other. This obviously has its benefits for a system like our 2020 E car which has a large amount of systems needing to communicate with each other. Ethernet is simply a bridge between two devices, whether that be between two computers, a device and a master computer, or two separate devices. From the Autonomous teams viewpoint, although there are some areas where cross communication would be ideal, the main focus is having all of the data input into the SLAM algorithm and the brains of the autonomous system, the Jetson Xavier, so USB or Ethernet are probably the better options of the three.
+
+CAN is also the standard for vehicles due to its robustness and reliability. How many times have you had a USB cord break? However, it’s not just from a physical perspective. CAN bus is slower than USB because it has a higher priority for reliable data transfer. CAN is also less susceptible to interference, has better and longer range, and the cord management is much simpler as every device on the bus shares the same wires. Due to this, CAN can also recognise when an individual device has failed and can locate the fault. USB is simply designed so that you can plug in the device and it just works. Ethernet on the other hand is based on transporting large amounts of data over a reasonable period of time. It’s faster than CAN but less suited for the harsh environment of a vehicle, but more so than USB. Ethernet is also typically faster than USB depending on the circumstances. It also has a larger cable length range than USB, with up to 100 meters in comparison to USBs 5 meters before the reliability drops off. USB also provides power to devices, whereas Ethernet does not.
+
+## Which to choose?
+There are a few extra things to consider before making this decision. Firstly, the Jetson Xavier would require a CAN bus transceiver to be able to send and receive data in this format. This adds an additional cost of $50 to $500 depending on the form of the transceiver, whether it be a typical cheap chip or a PCIe. Secondly, the Xavier has a limited number of ports, so modifications will need to be made for the USB and Ethernet options. As the majority of the devices required for Autonomous use USB, an extension of USB ports is likely regardless of this choice. Thirdly, it would be ideal at the current for the LiDAR to have access to the pose estimates made by the GPS/IMU, instead of going through SLAM or the Xavier to get to them.
+
+### With that out of the way, which seems the most likely candidate? 
+
+Ideally from a vehicle perspective, it would be CAN bus. Physically, it is the most secure, robust, and is designed for automotive use, but as the Autonomous systems have not been designed to link its devices in this way, it likely wouldn’t be the preferred option. It’s latency is also a downside to this option. Perhaps in future years or if ever the Piksi Multi will need to go through the MoTeC, this would be a more viable option.
+
+So let's look at the last two options. The easiest option to implement at this stage is USB. It’s simplistic, most of the other devices are using it, and extra ports are already planned to become available soon in the design. It’s extremely modular, and if we needed to switch the Piksi Multi over to the available Husky vehicle for testing, it's an easy transition. However, on the downside it has no capabilities if we want to move the Piksi to the 2020 E car for testing, data collection, or for use in the 2020.
+
+Ethernet on the other hand would offer some connectability to the 2020 E car and the MoTeC. It is also likely that the Husky offers connection via Ethernet as well, so testing on that platform shouldn’t be an issue. It can send and receive larger lengths of data, has a larger range, and is faster in this instance as the ethernet port available on the Xavier is Gigabit Ethernet versus the microUSB port on the Piksi Multi. Due to another device already using the available port, an Ethernet Port Expansion Card would be necessary, but these can be purchased for $50-$100 and would free up a USB port in the process, potentially removing the need to expand our USB ports and in turn freeing up the funds for the ethernet ports. 
+
+From this, the most viable option is an Ethernet connection, but further analysis and discussion is required at this stage. USB, however, offers a strong second choice if Ethernet is found not to be viable.
