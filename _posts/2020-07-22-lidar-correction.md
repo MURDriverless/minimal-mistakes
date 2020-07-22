@@ -29,17 +29,21 @@ The use of the OS1-64, however, has a trick to make said corrections easier. The
 
 ![image-center](/assets/img/lidar-correction/lidar_timing.png)
 
-Which allows us to perform the naive IMU polling at the rate which the IMU provides data ("Stair" polling/Euler Integration), or 22cm between the 48 vertical slices (3 packets of 16 vertical slices). The next step in refinement is the use of the trapezoidal rule for numerical integration with IMU sample points as the points of integration, which nets us a linear interpolation of vehicle pose. An even further refine step could be the use of cubic b-spline interpolation which "may" be more representative of the vehicle dynamics. However, when trying to numerically integrate the cubic spline a sparse time step will degenerate the cubic curve into a linear interpolation. Thus, it was decided for the interim to stick with a linear integration model, as higher-ordered interpolation techniques may be "pulling data out of thin air" (Making the IMU data sample rate seem higher than it is).
+Which allows us to perform the naive IMU polling at the rate which the IMU provides data ("Stair" polling/Euler Integration), or 22cm between the 48 vertical slices (3 packets of 16 vertical slices). 
+
+Assuming the maximum speed of the vehicle is 80kph, which is 22.22m/s, and the IMU update frequency is at 100hz, this translates to about 22cm per IMU update.
+
+The next step in refinement is the use of the trapezoidal rule for numerical integration with IMU sample points as the points of integration, which nets us a linear interpolation of vehicle pose. An even further refine step could be the use of cubic b-spline interpolation which "may" be more representative of the vehicle dynamics. However, when trying to numerically integrate the cubic spline a sparse time step will degenerate the cubic curve into a linear interpolation. Thus, it was decided for the interim to stick with a linear integration model, as higher-ordered interpolation techniques may be "pulling data out of thin air" (Making the IMU data sample rate seem higher than it is).
 
 A quick frequency analysis of MUR's 2017 combustion car's IMU reading (10Hz) during its track drive (endurance), does seem to show that the characteristic/energetic vehicle dynamics at least on the acceleration scale is around 0.1 to 1Hz.
 
-![image-center](/assets/img/lidar-correction/Lat_accel.png)
+![image-center](/assets/img/lidar-correction/Lat_Accel.png)
 
  
-![image-center](/assets/img/lidar-correction/Lon_accel.png)
+![image-center](/assets/img/lidar-correction/Lon_Accel.png)
 
  
-![image-center](/assets/img/lidar-correction/Vert_accel.png)
+![image-center](/assets/img/lidar-correction/Vert_Accel.png)
 
 These make the initial guess of using a linear integration technique for LiDAR correction show promise, as a polling rate of an IMU at 100 Hz is 100 to 1000x greater than the characteristic vehicle dynamics, which can aid in IMU selection.
 
