@@ -1,7 +1,7 @@
 ---
-title: "Mapping module validation"
+title: "Mapping Module Validation"
 author: "Jack McRobbie"
-categories: localisation, slam, ROS
+categories: mapping
 tags: [ROS, slam]
 published: true
 mathjax: false

@@ -2,7 +2,7 @@
 title: "Driverless SLAM"
 author: "Jack McRobbie"
 categories: mapping
-tags: [documentation,slam]
+tags: [documentation, slam]
 image: mur19e.jpg
 published: true
 mathjax: true
