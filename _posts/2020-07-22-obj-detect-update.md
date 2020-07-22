@@ -9,7 +9,7 @@ toc: true
 toc_label: "My Table of Contents"
 toc_icon: "cog"
 mathjax: true
-classes: wide
+# classes: wide
 
 gallery:
   - url: /assets/img/obj-detect/yolov3_vanilla_101_pr_curve.png
