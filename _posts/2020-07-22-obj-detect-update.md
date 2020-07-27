@@ -167,6 +167,10 @@ The second video shows the detector running in INT8 inference mode, after being 
 
 ## Special Thanks to Nvidia
 
+I would like to take this opportunity to thank Nvidia APAC for their generous support.
+The provided graphics card and Jetson AGX Xavier have allowed us to train, develop and test our neural networks.
+With the extremely limited budget we have for 2020, it would have been impossible to procure these devices ourselves.
+
 <figure>
   <img src="/assets/img/obj-detect/nvidia-gpu.jpeg" alt="test-bed"/>
   <figcaption>Nvidia GPU used for Training</figcaption>
@@ -176,7 +180,3 @@ The second video shows the detector running in INT8 inference mode, after being 
   <img src="/assets/img/obj-detect/nvidia-xavier.jpeg" alt="test-bed"/>
   <figcaption>Nvidia Jetson Xavier for Testing</figcaption>
 </figure>
-
-I would like to take this opportunity to thank Nvidia APAC for their generous support.
-The graphics card and Jetson AGX Xavier have allowed us to train, develop and test our neural networks.
-With the extremely limited budget we have for 2020, it would not have been possible for us to procure any of these devices ourselves.
