@@ -1,5 +1,14 @@
 ---
 title: "LiDAR Simulation, Classification and Mounting"
+
+excerpt: "Featuring Ouster OS1-64"
+header:
+  overlay_image: /assets/img/lidar-2/os1.jpeg
+  overlay_filter: 0.1 # same as adding an opacity of 0.5 to a black background
+  # actions:
+  #   - label: "More Info"
+  #     url: "https://ouster.com/products/os1-lidar-sensor/"
+
 author: "Steven Lee"
 categories: perception
 tags: [documentation, lidar, classification, simulation]
@@ -12,18 +21,11 @@ mathjax: true
 ## classes: wide
 ---
 
-<!-- * LiDAR pipeline simulation
-* LiDAR traffic cone classification
-* LiDAR mounting position -->
-
-<!-- Discuss changes in our situation.
-Stage 4 so that we cannot enter the labs to test on the Husky.
-But we work to our best extent to maximise the outcome.
-Work with constraints and get creative. -->
+## General Update
 
 Since the previous blog post update in July, a lot changes have occurred, including the transition into Stage 4 lockdown in Melbourne. This includes curfew from 8pm to 5am, 5km travel limit, and shopping restrictions such that only people with work permits can visit hardware stores.
 
-However, the team has pressed on to make progress wherever possible while taking into account the imposed constraints. The original plan was to head into the laboratory to work on the Husky robot at this time. However, due to this unforeseen circumstance, we ended up having to shift our main focus to simulation within Gazebo. Optimistically, we should still be able to get a few weeks of hands-on time with the Husky robot after Stage 4 restriction ends, but it will still be a challenge to get everything running and collect all the validation data required for final report.
+The original plan was to head into the laboratory to work on the Husky robot at this time. However, due to this unforeseen circumstance, we ended up having to shift our main focus to simulation within Gazebo. Optimistically, we should still be able to get a few weeks of hands-on time with the Husky robot after Stage 4 restriction ends, but it will still be a challenge to get everything running and collect all the validation data required for final report.
 
 ## LiDAR Pipeline Simulation
 In order to ensure that the existing LiDAR pipeline can integrate smoothly with the SLAM module, a [simple simulation](https://github.com/MURDriverless/tortoisebot) is created for testing and integration.
@@ -79,7 +81,7 @@ A simple convolutional neural network consisting of convolutional layers and max
   <figcaption>Basic CNN Design for LiDAR Image Classifier (Presented in AlexNet Style)</figcaption>
 </figure>
 
-However, due to the limited indoor space, only a very limited set of training data was collected. Extensive input data augmentation along with network dropouts were applied, but the network still appeared to have overfitted, which was hinted by the unusually high validation accuracy.
+However, due to the limitation of working indoor, only a very limited set of training data was collected. Extensive input data augmentation along with network dropouts were applied, but the network still appeared to have overfitted, which was hinted by the unusually high validation accuracy.
 
 <figure>
   <img src="/assets/img/lidar-2/augmented.png" alt="this is a placeholder image">
@@ -90,15 +92,35 @@ Before deployment, the classifier model and weights were saved and converted to 
 
 ### Classifier Performance
 
+A mini-demo of the LiDAR detection and classification pipeline shown below. While the pipeline functions as expected, the classifier performance can definitely be improved further with future addition to the tiny classification dataset that we have at the moment.
+
 <figure>
   <img src="/assets/img/lidar-2/lidar-img-pt-cloud-detect-3.gif" alt="this is a placeholder image">
   <figcaption>LiDAR Classification Mini-demo (intensity image on top, point cloud at bottom)</figcaption>
 </figure>
 
+During indoor testing, the pipeline was able to complete one iteration of processing within 50ms. However, a stream of larger test data would be required to fully assess the maximum throughout.
+
+A major limitation of this classifier is the vertical resolution of the LiDAR. Running in `1024 x 64 MODE`, the LiDAR essentially provides access to a gray-scale image of size `1024 x 64`, but when cones are further away, cropped area significantly reduces. Assuming we need at least 6 vertical pixels on the intensity image to perform classification on the small traffic cone as specified by FSG, this limits the classification range to about 11.9m.
+
 ## LiDAR Mounting Position
 
+<figure>
+  <img src="/assets/img/lidar-2/fsg-sensor-mount.png" alt="this is a placeholder image">
+  <figcaption>Allowed Space for Mounting Sensors (FSG 2020 Rules: DV 4.2.1)</figcaption>
+</figure>
+
+Currently, there are two main proposals for where the LiDAR should be mounted on the MUR-20E (the 2020 electric car).
+
+1. Mount the LiDAR below the front nose cone.
+2. Mount the LiDAR above the driver head rest.
+
+Originally, we were leaning towards option 2 for LiDAR mounting as resolves the issue of potential occlusion of while trying to detect a traffic cones that is directly behind another cone. However, due to the design constraints imposed by the main team, it would be significantly more challenging to mount the sensor near the headrest as that is also where the stereo camera enclosure is placed.
+
+In the end, we settled on option 1 which should maximise the detection range, but is susceptible to the problem of occlusion. This problem should not be severe as FSG rules indicate that cones are usually placed metres apart, except in sharp corners where cones would aggregate in close proximity.
 
 ## Future Tasks
 
-* collect more cone crop images to improve traffic cone classifier
-* can use existing pipeline to build dataset for other types of detector / classifier that can be directly applied on point cloud data
+The next step to improve the existing pipeline would be to refactor existing codes and collect additional classifier dataset. The data collection task would most likely take place immediately after we are cleared to work on campus.
+
+Another good outcome from the current implementation is the ability to label point cloud data. That is, given a track drive dataset, the algorithm can help label exactly which points of the point cloud belong to traffic cones of a particular type/colour. This could be useful if we transition into supervised learning based pipeline that required labelled point cloud dataset.
