@@ -1,12 +1,5 @@
 ---
 title: "Full Stack Integration"
-# excerpt: "Featuring Ouster OS1-64"
-# header:
-#   overlay_image: /assets/img/lidar-2/os1.jpeg
-#   overlay_filter: 0.1 # same as adding an opacity of 0.5 to a black background
-#   # actions:
-#   #   - label: "More Info"
-#   #     url: "https://ouster.com/products/os1-lidar-sensor/"
 author: "Steven Lee"
 categories: integration
 tags: [lidar, slam, integration, simulation]
