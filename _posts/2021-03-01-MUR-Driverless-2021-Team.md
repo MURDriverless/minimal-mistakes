@@ -2,7 +2,7 @@
 title: "MUR Driverless 2021 Team"
 author: "Kelvin Liao"
 categories: general
-tags: [documentation,sample]
+tags: [documentation]
 image: mur19e.jpg
 published: true
 ---
