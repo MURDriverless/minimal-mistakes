@@ -21,7 +21,7 @@ Assuming no longitudinal slip, the Husky can be modelled with a simple kinematic
 ω, of the Husky.
 
 <figure>
-  <img width="278" height="264" src="https://user-images.githubusercontent.com/78944454/137826421-5731ba0a-432e-43ac-8b5e-f052e6f884a0.png">
+  <img width="150" height="150" src="https://user-images.githubusercontent.com/78944454/137826421-5731ba0a-432e-43ac-8b5e-f052e6f884a0.png">
 </figure>
 
 ## Low Level Control Logic and Physical Constraints
