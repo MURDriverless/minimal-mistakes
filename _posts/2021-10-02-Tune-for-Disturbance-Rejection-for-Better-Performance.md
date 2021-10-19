@@ -22,7 +22,7 @@ the final cost gains that achieve the best lap times and disturbance rejection i
   <img width="300" height="300" src="https://user-images.githubusercontent.com/78944454/137819318-2ca7e139-4560-47e0-8a3b-fc0f4ff35b49.png">
 </p>
 
-## Cost Gains and Results from [before](/fastlapcontrol/Working-MPCC-HuskySim/)
+## Cost Gains and Results from [before](/control/Working-MPCC-HuskySim/)
 <p align="center">
   <img width="596" height="146" src="https://user-images.githubusercontent.com/78944454/137822548-d1231221-bb89-41b6-bbd1-12f69a20904f.PNG">
 </p>
