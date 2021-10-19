@@ -31,7 +31,7 @@ the final cost gains that achieve the best lap times and disturbance rejection i
   <img width="300" height="300" src="https://user-images.githubusercontent.com/78944454/137822481-a9826d5f-6d46-4c8e-b5f7-5baaddd6b77d.png">
 </p>
 
-## Analysis comparing current results vs [previous results](/fastlapcontrol/Working-MPCC-HuskySim/)
+## Analysis of current results vs [previous results](/fastlapcontrol/Working-MPCC-HuskySim/)
 Despite higher penalization on φ error and ω, which meant lesser prioritization on progress maximization, it actually performed better than before in terms of lap time and 
 staying within the track boundary, achieving a lap time of 30.6s~32.6s, with a deviation of 2s, as compared to before which had a lap time of 31.1s~34.3s.
 
