@@ -10,7 +10,7 @@ The current Autonomous Control pipeline is designed for the Trackdrive event, su
 System, plus plan for and follow the optimal racing line to complete laps as fast as it can.
 
 <figure>
-  <img src="https://user-images.githubusercontent.com/78944454/137901859-e00197b5-3056-4c7e-a2f2-4296c58adc31.png" />
+  <img src="https://user-images.githubusercontent.com/78944454/137904209-ed3c75a2-34fc-4cd7-b77b-57425c5ab40d.png"/>
 </figure>
   
 The Autonomouc Control Pipeline features
