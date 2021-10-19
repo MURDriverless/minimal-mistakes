@@ -1,7 +1,7 @@
 ---
-title: "MPCC on Husky"
+title: "Tune for Disturbance Rejection for Better Performance"
 author: "Kheng Yu Yeoh"
-categories: fast lap control
+categories: fastlapcontrol
 tags: [Husky, fast lap control, simulation, disturbance]
 published: true
 ---
@@ -25,6 +25,8 @@ the final cost gains that achieve the best lap times and disturbance rejection i
 ## Comparison from before
 <p align="center">
   <img width="596" height="146" src="https://user-images.githubusercontent.com/78944454/137822548-d1231221-bb89-41b6-bbd1-12f69a20904f.PNG">
+</p>
+<p align="center">
   <img width="300" height="300" src="https://user-images.githubusercontent.com/78944454/137822461-8c393c6c-e741-45fb-a63c-f42a4bc9d126.png">  
   <img width="300" height="300" src="https://user-images.githubusercontent.com/78944454/137822481-a9826d5f-6d46-4c8e-b5f7-5baaddd6b77d.png">
 </p>
