@@ -35,7 +35,7 @@ wants to turn left), since it cannot command more than 1m/s for either wheels (c
 
 To incorporate this constraint into the model, the lower level controller logic is modelled as below,
 <figure>
-  <img width="637 " height="263 "src="https://user-images.githubusercontent.com/78944454/137827921-4ea7488e-306d-4648-a828-8cb6853f71db.png">
+  <img width="637" height="263" src="https://user-images.githubusercontent.com/78944454/137827921-4ea7488e-306d-4648-a828-8cb6853f71db.png">
 </figure>
 
 In addition, an additional maximum magnitude constraint on ω of 0.5rad/s is also incorporated into the dynamics, to better fit our observations in real life testings.
