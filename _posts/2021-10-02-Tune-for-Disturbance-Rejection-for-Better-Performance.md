@@ -39,7 +39,7 @@ Similar to the previous run, despite the same weights for contouring error and p
 higher penalization on ω and φ error, it is still able to touch all the apex of the race track, and is also able to determine the short straight line path through 
 the chicane section, demonstrating its local optimality characteristic.
 
-The effects of higher penalization on φ error favoured solutions that allow the Husky to track the shape centerline more, thus favouring a solution that also allows it to
+The effects of higher penalization on φ error favoured solutions that allow the Husky to track the centerline shape more, thus favouring a solution that also allows it to
 follow the shape of the track better. The higher penalization on ω on the other hand favoured solutions that allow the Husky to not command high angular velocity if it can, 
 which helps in reducing the amount of slip that the Husky would experience.
 
