@@ -1,8 +1,8 @@
 ---
 title: "Tune for Disturbance Rejection for Better Performance"
 author: "Kheng Yu Yeoh"
-categories: fastlapcontrol
-tags: [Husky, fast lap control, simulation, disturbance]
+categories: control
+tags: [Husky, fast lap control, ROS, simulation, mpcc]
 published: true
 ---
 
