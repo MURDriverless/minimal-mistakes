@@ -13,7 +13,7 @@ System, plus plan for and follow the optimal racing line to complete laps as fas
   <img src="https://user-images.githubusercontent.com/78944454/137904209-ed3c75a2-34fc-4cd7-b77b-57425c5ab40d.png"/>
 </figure>
   
-The Autonomouc Control Pipeline features
+The Autonomous Control Pipeline features
 - Slow Lap - For exploring the unknown track, and mapping the layout of the race track along with SLAM
 - Transition - Such that the vehicle can start racing once a suitable map of the track is obtained
 - Fast Lap - To plan for and follow the optimal race line as fast as it can, without going over track boundaries and respecting actuation limitations.
