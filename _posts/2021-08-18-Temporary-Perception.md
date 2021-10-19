@@ -1,8 +1,8 @@
 ---
 title: "Simple Cone Positioning System"
 author: "Aldrei Recamadas"
-categories: slowlap control
-tags: [Husky, slow lap control, simulation, ROS, Driverless]
+categories: control
+tags: [Husky, slow lap, simulation, ROS, Driverless]
 published: true
 ---
 
