@@ -1,8 +1,8 @@
 ---
 title: "Working MPCC on Husky Gazebo Simulation"
 author: "Kheng Yu Yeoh"
-categories: fastlapcontrol
-tags: [Husky, fast lap control, simulation, mpcc]
+categories: control
+tags: [Husky, fast lap control, ROS, simulation, mpcc]
 published: true
 ---
 
