@@ -26,7 +26,7 @@ In addition, the Autonomous Control Pipeline needs to fulfill the following FSG 
 - FSG D8.2.6 - Vehicle must stop within 30m behind the finish line on the track
   - Fast Lap controller stop publishing actuation and exits after 10 laps
 
-As we're missing a member to work on models and simulation, we mainly tested our working on the Husky, which has the model as described [here](/control/Husky-Model/)
+As we're missing a member to work on models and simulation, we mainly tested our working on the Husky, which has the model as described [here](/model/Husky-Model/)
 
 ## Full Rviz Simulation
 {% include video id="sFjnP6knJ3M" provider="youtube" %}
