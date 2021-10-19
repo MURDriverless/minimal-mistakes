@@ -8,7 +8,7 @@ published: true
 
 ## Husky
 <figure>
-  <img src="https://user-images.githubusercontent.com/78944454/137827604-be9ec7ba-f497-46ec-ac17-1e10962f2e9a.PNG">
+  <img width="552" height="601" src="https://user-images.githubusercontent.com/78944454/137827604-be9ec7ba-f497-46ec-ac17-1e10962f2e9a.PNG">
 </figure>
 The Husky is a 4 wheeled skid-steering mobile robot that comes with its own sensors, EKF-SLAM, controller, plus various packages to support the implementation of our autonomous 
 system on it. While it is a slow vehicle that can only go 1m/s, it is still good as an initial test vehicle due to it being safe to work with, and we do not need to expand more
@@ -21,7 +21,7 @@ Assuming no longitudinal slip, the Husky can be modelled with a simple kinematic
 ω, of the Husky.
 
 <figure>
-  <img src="https://user-images.githubusercontent.com/78944454/137826421-5731ba0a-432e-43ac-8b5e-f052e6f884a0.png">
+  <img width="278" height="264" src="https://user-images.githubusercontent.com/78944454/137826421-5731ba0a-432e-43ac-8b5e-f052e6f884a0.png">
 </figure>
 
 ## Low Level Control Logic and Physical Constraints
@@ -35,7 +35,7 @@ wants to turn left), since it cannot command more than 1m/s for either wheels (c
 
 To incorporate this constraint into the model, the lower level controller logic is modelled as below,
 <figure>
-  <img src="https://user-images.githubusercontent.com/78944454/134853806-f71d7ad8-9aea-4025-b8fe-c3420426db04.png">
+  <img width="637 " height="263 "src="https://user-images.githubusercontent.com/78944454/137827921-4ea7488e-306d-4648-a828-8cb6853f71db.png">
 </figure>
 
 In addition, an additional maximum magnitude constraint on ω of 0.5rad/s is also incorporated into the dynamics, to better fit our observations in real life testings.
